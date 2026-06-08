@@ -1,0 +1,55 @@
+DSEProyectoFinal
+--------------------------
+
+Flujo Base
+--------------------------
+
+Formulario
+   ↓
+Clase 
+   ↓
+Repositorio 
+   ↓
+SQL Server
+
+Estructura del Proyecto - Propuesta Incial
+------------------------------------------
+
+│ Program.cs
+
+├── Clases
+│      Cine.cs
+│      Pelicula.cs
+│      Horario.cs
+│      Usuario.cs
+│      Promocion.cs
+│      ProductoDulceria.cs
+│
+├── Repositorio
+│      Conexion.cs
+│      CineRepositorio.cs
+│      PeliculaRepositorio.cs
+│      HorarioRepositorio.cs
+│      UsuarioRepositorio.cs
+│      PromocionRepositorio.cs
+│
+├── Formularios
+│      FrmPrincipal.cs
+│      FrmLogin.cs
+│      FrmRegistro.cs
+│
+│      FrmCines.cs
+│      FrmPeliculas.cs
+│      FrmHorarios.cs
+│      FrmPromociones.cs
+│      FrmUsuarios.cs
+│
+│      FrmDulceria.cs
+│
+│      FrmVentaEntradas.cs
+│      FrmPago.cs
+│      FrmTicket.cs
+│
+├── Imagenes
+│
+└── Reportes
