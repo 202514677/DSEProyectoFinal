@@ -1,0 +1,11 @@
+C:\Users\almud\Downloads\DSEProyectoFinal\bin\Debug\DSEProyectoFinal.exe.config
+C:\Users\almud\Downloads\DSEProyectoFinal\bin\Debug\DSEProyectoFinal.exe
+C:\Users\almud\Downloads\DSEProyectoFinal\bin\Debug\DSEProyectoFinal.pdb
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.csproj.AssemblyReference.cache
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.Formularios.FrmCines.resources
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.FrmPrincipal.resources
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.Properties.Resources.resources
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.csproj.GenerateResource.cache
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.csproj.CoreCompileInputs.cache
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.exe
+C:\Users\almud\Downloads\DSEProyectoFinal\obj\Debug\DSEProyectoFinal.pdb
