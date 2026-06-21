@@ -18,6 +18,22 @@ namespace DSEProyectoFinal.Clases
 
         public string direccion { get; set; }
 
+        public string googleMaps { get; set; }
+
+        public string imagen { get; set; }
+
+        public int salas2D { get; set; }
+
+        public int salas3D { get; set; }
+
+        public int salas4K { get; set; }
+
+        public int salasPrime { get; set; }
+
+        public int salasEventos { get; set; }
+
+        public int IdUsuario { get; set; }
+
         public int activo { get; set; }
 
         private readonly CineRepositorio repositorio;
@@ -65,5 +81,40 @@ namespace DSEProyectoFinal.Clases
             return repositorio.Buscar(nombre);
         }
 
+        public bool ExisteNombre(string nombre)
+        {
+            return repositorio.ExisteNombre(nombre);
+        }
+
+        public bool ExisteNombreEdicion( string nombre, int idCine)
+        {
+            return repositorio.ExisteNombreEdicion(
+                nombre,
+                idCine);
+        }
+
+        public bool ExisteGoogleMaps(string googleMaps)
+        {
+            return repositorio.ExisteGoogleMaps(googleMaps);
+        }
+
+        public bool ExisteGoogleMapsEdicion( string googleMaps, int idCine)
+        {
+            return repositorio.ExisteGoogleMapsEdicion( googleMaps, idCine);
+        }
+
+        public DataTable ListarCiudades()
+        {
+            return repositorio
+            .ListarCiudades();
+        }
+
+        public DataTable ListarCinesPorCiudad(
+            string ciudad)
+        {
+            return repositorio
+            .ListarCinesPorCiudad(
+            ciudad);
+        }
     }
 }

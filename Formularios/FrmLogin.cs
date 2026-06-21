@@ -1,0 +1,357 @@
+﻿using DSEProyectoFinal.Clases;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DSEProyectoFinal.Formularios
+{
+    public partial class FrmLogin : Form
+    {
+        private Usuario usuario = new Usuario();
+
+        private Cliente cliente =  new Cliente();
+
+        private string codigoToken = "";
+
+        // true = envía email real
+        // false = modo pruebas
+        private bool enviarCorreoReal = false;
+
+        public string CorreoPredeterminado
+        {
+            get;
+            set;
+        }
+
+        public FrmLogin()
+        {
+            InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void FrmLogin_Load( object sender, EventArgs e)
+        {
+            cboTipoUsuario.Items.Clear();
+
+            cboTipoUsuario.Items.Add("CLIENTE");
+
+            cboTipoUsuario.Items.Add("USUARIO");
+
+            cboTipoUsuario.SelectedIndex = 0;
+
+            txtCorreo.Clear();
+
+            txtPassword.Clear();
+
+            txtToken.Clear();
+
+            txtToken.Enabled = true;
+
+            btnEntrar.Enabled = false;
+
+            btnEnviarCodigo.Enabled = true;
+
+            txtCorreo.Focus();
+
+            if (!string.IsNullOrEmpty(CorreoPredeterminado))
+            {
+                txtCorreo.Text =
+                CorreoPredeterminado;
+
+                txtPassword.Text = "1234";
+            }
+        }
+
+        private string GenerarToken()
+        {
+            Random random =
+            new Random();
+
+            /*return random
+            .Next(
+            100000,
+            999999)
+            .ToString();*/
+
+            return "1234";
+        }
+
+        private void EnviarCodigo( string correoDestino,  string token)
+        {
+            try
+            {
+                MailMessage correo =
+                new MailMessage();
+
+                correo.From =
+                new MailAddress(
+                "cinepelis@gmail.com");
+
+                correo.To.Add(
+                correoDestino);
+
+                correo.Subject =
+                "Código de Acceso CinePelis";
+
+                correo.Body =
+                "Su código de acceso es: "
+                + token;
+
+                SmtpClient servidor =
+                new SmtpClient(
+                "smtp.gmail.com",
+                587);
+
+                servidor.Credentials =
+                new NetworkCredential(
+
+                "cinepelis@gmail.com",
+
+                "CLAVE_APP_GMAIL");
+
+                servidor.EnableSsl =
+                true;
+
+                servidor.Send(
+                correo);
+
+                MessageBox.Show(
+                "Código enviado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                ex.Message);
+            }
+        }
+
+        private void btnEnviarCodigo_Click(
+   object sender,
+   EventArgs e)
+        {
+            if (txtCorreo.Text.Trim() == "")
+            {
+                MessageBox.Show(
+                "Ingrese correo electrónico");
+
+                txtCorreo.Focus();
+
+                return;
+            }
+
+            codigoToken =
+            GenerarToken();
+
+            if (enviarCorreoReal)
+            {
+                EnviarCodigo(
+                txtCorreo.Text.Trim(),
+                codigoToken);
+
+                MessageBox.Show(
+                "Código enviado correctamente");
+            }
+            else
+            {
+                MessageBox.Show(
+
+                "Modo pruebas.\n\n" +
+
+                "Token generado: " +
+
+                codigoToken,
+
+                "CinePelis");
+
+                // opcional
+                txtToken.Text =
+                codigoToken;
+            }
+
+            btnEnviarCodigo.Enabled =
+            false;
+
+            btnEntrar.Enabled =
+            true;
+
+            txtToken.Focus();
+        }
+
+        private void btnEntrar_Click( object sender, EventArgs e)
+        {
+            if (cboTipoUsuario.SelectedIndex == -1)
+            {
+                MessageBox.Show(
+                "Seleccione tipo de usuario");
+
+                return;
+            }
+
+            if (txtCorreo.Text.Trim() == "")
+            {
+                MessageBox.Show(
+                "Ingrese correo electrónico");
+
+                txtCorreo.Focus();
+
+                return;
+            }
+
+            if (txtPassword.Text.Trim() == "")
+            {
+                MessageBox.Show(
+                "Ingrese contraseña");
+
+                txtPassword.Focus();
+
+                return;
+            }
+
+            if (txtToken.Text.Trim() == "")
+            {
+                MessageBox.Show(
+                "Ingrese token");
+
+                txtToken.Focus();
+
+                return;
+            }
+
+            if (txtToken.Text.Trim() != codigoToken)
+            {
+                MessageBox.Show(
+                "Token incorrecto");
+
+                txtToken.Focus();
+
+                txtToken.SelectAll();
+
+                return;
+            }
+
+            DataTable dt =
+            new DataTable();
+
+            if (cboTipoUsuario.Text == "USUARIO")
+            {
+                dt =
+                usuario.Login(
+                txtCorreo.Text.Trim(),
+                txtPassword.Text.Trim());
+            }
+            else
+            {
+                dt =
+                cliente.Login(
+                txtCorreo.Text.Trim(),
+                txtPassword.Text.Trim());
+            }
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show(
+                "Correo o contraseña incorrectos");
+
+                btnEntrar.Enabled = false;
+
+                btnEnviarCodigo.Enabled = true;
+
+                txtToken.Clear();
+
+                codigoToken = "";
+
+                return;
+            }
+
+            // =====================
+            // USUARIO
+            // =====================
+
+            if (cboTipoUsuario.Text == "USUARIO")
+            {
+                SesionActual.IdUsuario =
+                Convert.ToInt32(
+                dt.Rows[0]["IdUsuario"]);
+
+                SesionActual.NombreCompleto =
+                dt.Rows[0]["Nombres"].ToString()
+                + " "
+                +
+                dt.Rows[0]["Apellidos"].ToString();
+
+                SesionActual.Correo =
+                dt.Rows[0]["Correo"].ToString();
+
+                if (dt.Rows[0]["Rol"] == DBNull.Value)
+                {
+                    SesionActual.Rol =
+                    "USUARIO";
+                }
+                else
+                {
+                    SesionActual.Rol =
+                    dt.Rows[0]["Rol"]
+                    .ToString()
+                    .Trim()
+                    .ToUpper();
+                }
+
+                SesionActual.TipoUsuario =
+                "USUARIO";
+            }
+
+            // =====================
+            // CLIENTE
+            // =====================
+
+            else
+            {
+                SesionActual.IdUsuario =
+                Convert.ToInt32(
+                dt.Rows[0]["IdCliente"]);
+
+                SesionActual.NombreCompleto =
+                dt.Rows[0]["Nombre"].ToString()
+                + " "
+                +
+                dt.Rows[0]["Apellido"].ToString();
+
+                SesionActual.Correo =
+                dt.Rows[0]["Email"].ToString();
+
+                SesionActual.Rol =
+                "CLIENTE";
+
+                SesionActual.TipoUsuario =
+                "CLIENTE";
+            }
+
+            // Limpieza
+
+            btnEntrar.Enabled = false;
+
+            btnEnviarCodigo.Enabled = true;
+
+            txtToken.Clear();
+
+            codigoToken = "";
+
+            this.DialogResult =
+            DialogResult.OK;
+
+            this.Close();
+        }
+
+
+    }
+}
