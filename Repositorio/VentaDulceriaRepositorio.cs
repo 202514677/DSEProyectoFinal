@@ -129,5 +129,61 @@ namespace DSEProyectoFinal.Repositorio
                 return dt;
             }
         }
+
+        public DataTable ListarReporteDulceria(
+DateTime fechaInicio,
+DateTime fechaFin,
+string categoria)
+        {
+            string query =
+            @"SELECT *
+
+      FROM vw_ReporteDulceria
+
+      WHERE
+      CAST(FechaVenta AS DATE)
+      BETWEEN
+      CAST(@fechaInicio AS DATE)
+      AND
+      CAST(@fechaFin AS DATE)";
+
+            if (categoria != "TODAS")
+            {
+                query +=
+                " AND Categoria='" +
+                categoria + "'";
+            }
+
+            query +=
+            " ORDER BY CantidadVendida DESC";
+
+            using (SqlConnection conexion =
+                new SqlConnection(connectionString))
+            {
+                SqlCommand comando =
+                new SqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue(
+                "@fechaInicio",
+                fechaInicio);
+
+                comando.Parameters.AddWithValue(
+                "@fechaFin",
+                fechaFin);
+
+                conexion.Open();
+
+                SqlDataReader reader =
+                comando.ExecuteReader();
+
+                DataTable dt =
+                new DataTable();
+
+                dt.Load(reader);
+
+                return dt;
+            }
+        }
+
     }
 }

@@ -277,7 +277,48 @@ namespace DSEProyectoFinal
         private void peliculasToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             FrmReportePeliculas frm = new FrmReportePeliculas();
+            frm.ShowDialog();
+        }
 
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteClientes frm = new FrmReporteClientes();
+            frm.ShowDialog();
+        }
+
+        private void disposiciónSalasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteOcupacionSala frm = new FrmReporteOcupacionSala();
+            frm.ShowDialog();
+        }
+
+        private void cinesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmReporteVentas frm = new FrmReporteVentas();
+            frm.ShowDialog();
+        }
+
+        private void dulceriaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmReporteDulceria frm = new FrmReporteDulceria();
+            frm.ShowDialog();
+        }
+
+        private void todasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmPeliculasTodas frm = new FrmPeliculasTodas();
+            frm.ShowDialog();
+        }
+
+        private void estrenosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPeliculasEstrenos frm = new FrmPeliculasEstrenos();
+            frm.ShowDialog();
+        }
+
+        private void restricciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPeliculasRestriccion frm = new FrmPeliculasRestriccion();
             frm.ShowDialog();
         }
     }

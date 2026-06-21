@@ -30,84 +30,113 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportePeliculas));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboFiltro = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(61, 123);
+            this.reportViewer1.Location = new System.Drawing.Point(32, 150);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(633, 255);
+            this.reportViewer1.Size = new System.Drawing.Size(721, 278);
             this.reportViewer1.TabIndex = 0;
             // 
-            // label1
+            // dtpDesde
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(379, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Reporte de Películas";
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(427, 67);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(129, 20);
+            this.dtpDesde.TabIndex = 1;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
-            // cboFiltro
+            // dtpHasta
             // 
-            this.cboFiltro.FormattingEnabled = true;
-            this.cboFiltro.Items.AddRange(new object[] {
-            "TODAS",
-            "ESTRENOS",
-            "MÁS VISTAS",
-            "ACCIÓN",
-            "COMEDIA",
-            "DRAMA",
-            "TERROR",
-            "DOCUMENTAL",
-            "ANIMACIÓN",
-            "CIENCIA FICCIÓN"});
-            this.cboFiltro.Location = new System.Drawing.Point(335, 67);
-            this.cboFiltro.Name = "cboFiltro";
-            this.cboFiltro.Size = new System.Drawing.Size(121, 21);
-            this.cboFiltro.TabIndex = 31;
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(427, 99);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(129, 20);
+            this.dtpHasta.TabIndex = 2;
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.Crimson;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(529, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBuscar.BackColor = System.Drawing.Color.Crimson;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(589, 77);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 30);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label14.Location = new System.Drawing.Point(329, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(351, 20);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Reporte de Peliculas por rango de  Fechas";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 84);
-            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.Size = new System.Drawing.Size(188, 88);
+            this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(333, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Desde:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(336, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Hasta:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FrmReportePeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 410);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.cboFiltro);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReportePeliculas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmReportePeliculas";
             this.Load += new System.EventHandler(this.FrmReportePeliculas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -119,9 +148,12 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboFiltro;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

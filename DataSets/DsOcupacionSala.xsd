@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsOcupacionSala" targetNamespace="http://tempuri.org/DsOcupacionSala.xsd" xmlns:mstns="http://tempuri.org/DsOcupacionSala.xsd" xmlns="http://tempuri.org/DsOcupacionSala.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsOcupacionSala" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DsOcupacionSala" msprop:Generator_DataSetName="DsOcupacionSala">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OcupacionSala" msprop:Generator_RowEvHandlerName="OcupacionSalaRowChangeEventHandler" msprop:Generator_RowDeletedName="OcupacionSalaRowDeleted" msprop:Generator_RowDeletingName="OcupacionSalaRowDeleting" msprop:Generator_RowEvArgName="OcupacionSalaRowChangeEvent" msprop:Generator_TablePropName="OcupacionSala" msprop:Generator_RowChangedName="OcupacionSalaRowChanged" msprop:Generator_RowChangingName="OcupacionSalaRowChanging" msprop:Generator_TableClassName="OcupacionSalaDataTable" msprop:Generator_RowClassName="OcupacionSalaRow" msprop:Generator_TableVarName="tableOcupacionSala" msprop:Generator_UserTableName="OcupacionSala">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdHorario" msprop:Generator_ColumnPropNameInRow="IdHorario" msprop:Generator_ColumnPropNameInTable="IdHorarioColumn" msprop:Generator_ColumnVarNameInTable="columnIdHorario" msprop:Generator_UserColumnName="IdHorario" type="xs:int" minOccurs="0" />
+              <xs:element name="Cine" msprop:Generator_ColumnPropNameInRow="Cine" msprop:Generator_ColumnPropNameInTable="CineColumn" msprop:Generator_ColumnVarNameInTable="columnCine" msprop:Generator_UserColumnName="Cine" type="xs:string" minOccurs="0" />
+              <xs:element name="Pelicula" msprop:Generator_ColumnPropNameInRow="Pelicula" msprop:Generator_ColumnPropNameInTable="PeliculaColumn" msprop:Generator_ColumnVarNameInTable="columnPelicula" msprop:Generator_UserColumnName="Pelicula" type="xs:string" minOccurs="0" />
+              <xs:element name="NumSala" msprop:Generator_ColumnPropNameInRow="NumSala" msprop:Generator_ColumnPropNameInTable="NumSalaColumn" msprop:Generator_ColumnVarNameInTable="columnNumSala" msprop:Generator_UserColumnName="NumSala" type="xs:int" minOccurs="0" />
+              <xs:element name="TipoSala" msprop:Generator_ColumnPropNameInRow="TipoSala" msprop:Generator_ColumnPropNameInTable="TipoSalaColumn" msprop:Generator_ColumnVarNameInTable="columnTipoSala" msprop:Generator_UserColumnName="TipoSala" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaInicio" msprop:Generator_ColumnPropNameInRow="FechaInicio" msprop:Generator_ColumnPropNameInTable="FechaInicioColumn" msprop:Generator_ColumnVarNameInTable="columnFechaInicio" msprop:Generator_UserColumnName="FechaInicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaFinalizacion" msprop:Generator_ColumnPropNameInRow="FechaFinalizacion" msprop:Generator_ColumnPropNameInTable="FechaFinalizacionColumn" msprop:Generator_ColumnVarNameInTable="columnFechaFinalizacion" msprop:Generator_UserColumnName="FechaFinalizacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TotalAsientos" msprop:Generator_ColumnPropNameInRow="TotalAsientos" msprop:Generator_ColumnPropNameInTable="TotalAsientosColumn" msprop:Generator_ColumnVarNameInTable="columnTotalAsientos" msprop:Generator_UserColumnName="TotalAsientos" type="xs:int" minOccurs="0" />
+              <xs:element name="EntradasVendidas" msprop:Generator_ColumnPropNameInRow="EntradasVendidas" msprop:Generator_ColumnPropNameInTable="EntradasVendidasColumn" msprop:Generator_ColumnVarNameInTable="columnEntradasVendidas" msprop:Generator_UserColumnName="EntradasVendidas" type="xs:int" minOccurs="0" />
+              <xs:element name="Disponibles" msprop:Generator_ColumnPropNameInRow="Disponibles" msprop:Generator_ColumnPropNameInTable="DisponiblesColumn" msprop:Generator_ColumnVarNameInTable="columnDisponibles" msprop:Generator_UserColumnName="Disponibles" type="xs:int" minOccurs="0" />
+              <xs:element name="PorcentajeOcupacion" msprop:Generator_ColumnPropNameInRow="PorcentajeOcupacion" msprop:Generator_ColumnPropNameInTable="PorcentajeOcupacionColumn" msprop:Generator_ColumnVarNameInTable="columnPorcentajeOcupacion" msprop:Generator_UserColumnName="PorcentajeOcupacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NivelOcupacion" msprop:Generator_ColumnPropNameInRow="NivelOcupacion" msprop:Generator_ColumnPropNameInTable="NivelOcupacionColumn" msprop:Generator_ColumnVarNameInTable="columnNivelOcupacion" msprop:Generator_UserColumnName="NivelOcupacion" type="xs:string" minOccurs="0" />
+              <xs:element name="EstadoSala" msprop:Generator_ColumnPropNameInRow="EstadoSala" msprop:Generator_ColumnPropNameInTable="EstadoSalaColumn" msprop:Generator_ColumnVarNameInTable="columnEstadoSala" msprop:Generator_UserColumnName="EstadoSala" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

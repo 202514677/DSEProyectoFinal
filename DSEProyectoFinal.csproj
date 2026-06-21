@@ -73,6 +73,7 @@
     <Compile Include="Clases\Cartelera.cs" />
     <Compile Include="Clases\Cine.cs" />
     <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Convertidor.cs" />
     <Compile Include="Clases\DetalleVenta.cs" />
     <Compile Include="Clases\DetalleVentaDulceria.cs" />
@@ -85,10 +86,33 @@
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Venta.cs" />
     <Compile Include="Clases\VentaDulceria.cs" />
+    <Compile Include="DataSets\DsClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsDulceria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsDulceria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsOcupacionSala.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsOcupacionSala.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DsPeliculas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DsPeliculas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsVentas.cs">
+      <DependentUpon>DsVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DsVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsVentas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmCartelera.cs">
       <SubType>Form</SubType>
@@ -114,6 +138,12 @@
     <Compile Include="Formularios\FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmDetallePelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmDetallePelicula.Designer.cs">
+      <DependentUpon>FrmDetallePelicula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +161,24 @@
     </Compile>
     <Compile Include="Formularios\FrmPeliculas.Designer.cs">
       <DependentUpon>FrmPeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPeliculasEstrenos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPeliculasEstrenos.Designer.cs">
+      <DependentUpon>FrmPeliculasEstrenos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPeliculasRestriccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPeliculasRestriccion.Designer.cs">
+      <DependentUpon>FrmPeliculasRestriccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPeliculasTodas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPeliculasTodas.Designer.cs">
+      <DependentUpon>FrmPeliculasTodas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmProductosDulceria.cs">
       <SubType>Form</SubType>
@@ -170,16 +218,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\FrmReporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteClientes.Designer.cs">
+      <DependentUpon>FrmReporteClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteOcupacionSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteOcupacionSala.Designer.cs">
+      <DependentUpon>FrmReporteOcupacionSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FrmReportePeliculas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\FrmReportePeliculas.Designer.cs">
       <DependentUpon>FrmReportePeliculas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteVentas.Designer.cs">
+      <DependentUpon>FrmReporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorio\CarteleraRepositorio.cs" />
     <Compile Include="Repositorio\ClienteRepositorio.cs" />
     <Compile Include="Repositorio\DetalleVentaDulceriaRepositorio.cs" />
     <Compile Include="Repositorio\DetalleVentaRepositorio.cs" />
+    <Compile Include="Reportes\FrmReporteDulceria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReporteDulceria.Designer.cs">
+      <DependentUpon>FrmReporteDulceria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorio\PeliculaRepositorio.cs" />
     <Compile Include="Repositorio\CineRepositorio.cs" />
     <Compile Include="Repositorio\HorarioRepositorio.cs" />
@@ -202,6 +274,9 @@
     <EmbeddedResource Include="Formularios\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmDetallePelicula.resx">
+      <DependentUpon>FrmDetallePelicula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmHorarios.resx">
       <DependentUpon>FrmHorarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +285,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPeliculas.resx">
       <DependentUpon>FrmPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPeliculasEstrenos.resx">
+      <DependentUpon>FrmPeliculasEstrenos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPeliculasRestriccion.resx">
+      <DependentUpon>FrmPeliculasRestriccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPeliculasTodas.resx">
+      <DependentUpon>FrmPeliculasTodas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProductosDulceria.resx">
       <DependentUpon>FrmProductosDulceria.cs</DependentUpon>
@@ -234,11 +318,61 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RDLC\ReporteClientes.rdlc" />
+    <EmbeddedResource Include="RDLC\ReporteDulceria.rdlc" />
+    <EmbeddedResource Include="RDLC\ReporteOcupacionSala.rdlc" />
     <EmbeddedResource Include="RDLC\ReportePeliculas.rdlc" />
+    <EmbeddedResource Include="RDLC\ReporteVentas.rdlc" />
+    <EmbeddedResource Include="Reportes\FrmReporteClientes.resx">
+      <DependentUpon>FrmReporteClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteDulceria.resx">
+      <DependentUpon>FrmReporteDulceria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteOcupacionSala.resx">
+      <DependentUpon>FrmReporteOcupacionSala.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmReportePeliculas.resx">
       <DependentUpon>FrmReportePeliculas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmReporteVentas.resx">
+      <DependentUpon>FrmReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSets\DsClientes.xsc">
+      <DependentUpon>DsClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsClientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsClientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsClientes.xss">
+      <DependentUpon>DsClientes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsDulceria.xsc">
+      <DependentUpon>DsDulceria.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsDulceria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDulceria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsDulceria.xss">
+      <DependentUpon>DsDulceria.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsOcupacionSala.xsc">
+      <DependentUpon>DsOcupacionSala.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsOcupacionSala.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsOcupacionSala.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsOcupacionSala.xss">
+      <DependentUpon>DsOcupacionSala.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\DsPeliculas.xsc">
       <DependentUpon>DsPeliculas.xsd</DependentUpon>
     </None>
@@ -249,6 +383,17 @@
     </None>
     <None Include="DataSets\DsPeliculas.xss">
       <DependentUpon>DsPeliculas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsVentas.xsc">
+      <DependentUpon>DsVentas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DsVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DsVentas.xss">
+      <DependentUpon>DsVentas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -268,6 +413,7 @@
   <ItemGroup>
     <Content Include="Imagenes\Fondo.jpeg" />
     <Content Include="Imagenes\FondoPantalla.png" />
+    <Content Include="Resources\cinepelis.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

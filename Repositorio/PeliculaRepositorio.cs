@@ -109,6 +109,18 @@ namespace DSEProyectoFinal.Repositorio
             return EjecutarComandoSelect(query);
         }
 
+        public DataTable ListarCombo()
+        {
+            string query =
+            @"SELECT
+        IdPelicula,
+        Titulo
+      FROM Peliculas
+      WHERE Activo=1
+      ORDER BY Titulo";
+
+            return EjecutarComandoSelect(query);
+        }
         public DataTable Buscar(string texto)
         {
             string query =
@@ -499,6 +511,54 @@ namespace DSEProyectoFinal.Repositorio
                         "@genero",
                         filtro);
                     }
+
+                    conexion.Open();
+
+                    SqlDataReader reader =
+                    comando.ExecuteReader();
+
+                    DataTable dt =
+                    new DataTable();
+
+                    dt.Load(reader);
+
+                    return dt;
+                }
+            }
+        }
+
+        public DataTable ListarReporteFecha(
+DateTime fechaInicio,
+DateTime fechaFin)
+        {
+            string query =
+            @"SELECT *
+
+    FROM vw_Reporte_Peliculas
+
+    WHERE CAST(FechaVenta AS DATE)
+    BETWEEN
+    CAST(@fechaInicio AS DATE)
+
+    AND
+
+    CAST(@fechaFin AS DATE)
+
+    ORDER BY CantidadVistas DESC";
+
+            using (SqlConnection conexion =
+                new SqlConnection(connectionString))
+            {
+                using (SqlCommand comando =
+                    new SqlCommand(query, conexion))
+                {
+                    comando.Parameters.AddWithValue(
+                    "@fechaInicio",
+                    fechaInicio);
+
+                    comando.Parameters.AddWithValue(
+                    "@fechaFin",
+                    fechaFin);
 
                     conexion.Open();
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using DSEProyectoFinal.Repositorio;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DSEProyectoFinal.Repositorio;
-using DSEProyectoFinal.Clases;
-
-
 
 namespace DSEProyectoFinal.Reportes
 {
@@ -46,8 +43,6 @@ namespace DSEProyectoFinal.Reportes
             "DSEProyectoFinal.RDLC.ReportePeliculas.rdlc";
 
             reportViewer1.RefreshReport();
-
-            cboFiltro.SelectedIndex = 0;
         }
 
         private void CargarReporte()
@@ -56,8 +51,9 @@ namespace DSEProyectoFinal.Reportes
             new PeliculaRepositorio();
 
             DataTable dt =
-            pelicula.ListarReporte(
-            cboFiltro.Text);
+            pelicula.ListarReporteFecha(
+            dtpDesde.Value.Date,
+            dtpHasta.Value.Date);
 
             ReportDataSource origen =
             new ReportDataSource(
@@ -72,9 +68,39 @@ namespace DSEProyectoFinal.Reportes
             reportViewer1.RefreshReport();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             CargarReporte();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

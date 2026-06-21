@@ -108,6 +108,19 @@ namespace DSEProyectoFinal.Repositorio
             return EjecutarComandoSelect(query);
         }
 
+        public DataTable ListarCombo()
+        {
+            string query =
+            @"SELECT
+        IdCine,
+        Nombre
+      FROM Cines
+      WHERE Activo=1
+      ORDER BY Nombre";
+
+            return EjecutarComandoSelect(query);
+        }
+
         public DataTable Buscar(string texto)
         {
             string query =

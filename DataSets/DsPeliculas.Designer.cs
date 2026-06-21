@@ -289,7 +289,7 @@ namespace DSEProyectoFinal.DataSets {
             
             private global::System.Data.DataColumn columnDuracion;
             
-            private global::System.Data.DataColumn columnEstreno;
+            private global::System.Data.DataColumn columnFechaEstreno;
             
             private global::System.Data.DataColumn columnCantidadVistas;
             
@@ -370,9 +370,9 @@ namespace DSEProyectoFinal.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EstrenoColumn {
+            public global::System.Data.DataColumn FechaEstrenoColumn {
                 get {
-                    return this.columnEstreno;
+                    return this.columnFechaEstreno;
                 }
             }
             
@@ -429,7 +429,7 @@ namespace DSEProyectoFinal.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PeliculasRow AddPeliculasRow(int IdPelicula, string Titulo, string Genero, string Clasificacion, string Duracion, int Estreno, int CantidadVistas, decimal TotalIngresos) {
+            public PeliculasRow AddPeliculasRow(int IdPelicula, string Titulo, string Genero, string Clasificacion, string Duracion, System.DateTime FechaEstreno, int CantidadVistas, decimal TotalIngresos) {
                 PeliculasRow rowPeliculasRow = ((PeliculasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdPelicula,
@@ -437,7 +437,7 @@ namespace DSEProyectoFinal.DataSets {
                         Genero,
                         Clasificacion,
                         Duracion,
-                        Estreno,
+                        FechaEstreno,
                         CantidadVistas,
                         TotalIngresos};
                 rowPeliculasRow.ItemArray = columnValuesArray;
@@ -467,7 +467,7 @@ namespace DSEProyectoFinal.DataSets {
                 this.columnGenero = base.Columns["Genero"];
                 this.columnClasificacion = base.Columns["Clasificacion"];
                 this.columnDuracion = base.Columns["Duracion"];
-                this.columnEstreno = base.Columns["Estreno"];
+                this.columnFechaEstreno = base.Columns["FechaEstreno"];
                 this.columnCantidadVistas = base.Columns["CantidadVistas"];
                 this.columnTotalIngresos = base.Columns["TotalIngresos"];
             }
@@ -485,8 +485,8 @@ namespace DSEProyectoFinal.DataSets {
                 base.Columns.Add(this.columnClasificacion);
                 this.columnDuracion = new global::System.Data.DataColumn("Duracion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDuracion);
-                this.columnEstreno = new global::System.Data.DataColumn("Estreno", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEstreno);
+                this.columnFechaEstreno = new global::System.Data.DataColumn("FechaEstreno", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaEstreno);
                 this.columnCantidadVistas = new global::System.Data.DataColumn("CantidadVistas", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidadVistas);
                 this.columnTotalIngresos = new global::System.Data.DataColumn("TotalIngresos", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -713,17 +713,17 @@ namespace DSEProyectoFinal.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Estreno {
+            public System.DateTime FechaEstreno {
                 get {
                     try {
-                        return ((int)(this[this.tablePeliculas.EstrenoColumn]));
+                        return ((global::System.DateTime)(this[this.tablePeliculas.FechaEstrenoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estreno\' de la tabla \'Peliculas\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaEstreno\' de la tabla \'Peliculas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePeliculas.EstrenoColumn] = value;
+                    this[this.tablePeliculas.FechaEstrenoColumn] = value;
                 }
             }
             
@@ -821,14 +821,14 @@ namespace DSEProyectoFinal.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEstrenoNull() {
-                return this.IsNull(this.tablePeliculas.EstrenoColumn);
+            public bool IsFechaEstrenoNull() {
+                return this.IsNull(this.tablePeliculas.FechaEstrenoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEstrenoNull() {
-                this[this.tablePeliculas.EstrenoColumn] = global::System.Convert.DBNull;
+            public void SetFechaEstrenoNull() {
+                this[this.tablePeliculas.FechaEstrenoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

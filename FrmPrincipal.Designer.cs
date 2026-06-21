@@ -54,6 +54,7 @@
             this.cinesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dulceriaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disposiciónSalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.miPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +65,9 @@
             this.lblFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.picBanner = new System.Windows.Forms.PictureBox();
             this.tmHora = new System.Windows.Forms.Timer(this.components);
+            this.todasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.estrenosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restricciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -129,7 +133,10 @@
             // 
             this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.todasToolStripMenuItem,
-            this.ventaDeEntradasToolStripMenuItem});
+            this.ventaDeEntradasToolStripMenuItem,
+            this.todasToolStripMenuItem1,
+            this.estrenosToolStripMenuItem,
+            this.restricciónToolStripMenuItem});
             this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.peliculasToolStripMenuItem.Text = "Peliculas";
@@ -137,14 +144,14 @@
             // todasToolStripMenuItem
             // 
             this.todasToolStripMenuItem.Name = "todasToolStripMenuItem";
-            this.todasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.todasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.todasToolStripMenuItem.Text = "Cartelera";
             this.todasToolStripMenuItem.Click += new System.EventHandler(this.todasToolStripMenuItem_Click);
             // 
             // ventaDeEntradasToolStripMenuItem
             // 
             this.ventaDeEntradasToolStripMenuItem.Name = "ventaDeEntradasToolStripMenuItem";
-            this.ventaDeEntradasToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.ventaDeEntradasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ventaDeEntradasToolStripMenuItem.Text = "Venta de Entradas";
             this.ventaDeEntradasToolStripMenuItem.Click += new System.EventHandler(this.ventaDeEntradasToolStripMenuItem_Click);
             // 
@@ -233,7 +240,8 @@
             this.peliculasToolStripMenuItem2,
             this.cinesToolStripMenuItem2,
             this.dulceriaToolStripMenuItem2,
-            this.clientesToolStripMenuItem});
+            this.clientesToolStripMenuItem,
+            this.disposiciónSalasToolStripMenuItem});
             this.mnuReportes.Name = "mnuReportes";
             this.mnuReportes.Size = new System.Drawing.Size(65, 20);
             this.mnuReportes.Text = "Reportes";
@@ -242,27 +250,37 @@
             // peliculasToolStripMenuItem2
             // 
             this.peliculasToolStripMenuItem2.Name = "peliculasToolStripMenuItem2";
-            this.peliculasToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.peliculasToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.peliculasToolStripMenuItem2.Text = "Peliculas";
             this.peliculasToolStripMenuItem2.Click += new System.EventHandler(this.peliculasToolStripMenuItem2_Click);
             // 
             // cinesToolStripMenuItem2
             // 
             this.cinesToolStripMenuItem2.Name = "cinesToolStripMenuItem2";
-            this.cinesToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.cinesToolStripMenuItem2.Text = "Cines";
+            this.cinesToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.cinesToolStripMenuItem2.Text = "Ventas de Peliculas";
+            this.cinesToolStripMenuItem2.Click += new System.EventHandler(this.cinesToolStripMenuItem2_Click);
             // 
             // dulceriaToolStripMenuItem2
             // 
             this.dulceriaToolStripMenuItem2.Name = "dulceriaToolStripMenuItem2";
-            this.dulceriaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.dulceriaToolStripMenuItem2.Text = "Dulceria";
+            this.dulceriaToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.dulceriaToolStripMenuItem2.Text = "Ventas de Dulceria";
+            this.dulceriaToolStripMenuItem2.Click += new System.EventHandler(this.dulceriaToolStripMenuItem2_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // disposiciónSalasToolStripMenuItem
+            // 
+            this.disposiciónSalasToolStripMenuItem.Name = "disposiciónSalasToolStripMenuItem";
+            this.disposiciónSalasToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.disposiciónSalasToolStripMenuItem.Text = "Ocupación de Salas";
+            this.disposiciónSalasToolStripMenuItem.Click += new System.EventHandler(this.disposiciónSalasToolStripMenuItem_Click);
             // 
             // mnuUsuarios
             // 
@@ -345,6 +363,27 @@
             this.tmHora.Interval = 1000;
             this.tmHora.Tick += new System.EventHandler(this.tmHora_Tick);
             // 
+            // todasToolStripMenuItem1
+            // 
+            this.todasToolStripMenuItem1.Name = "todasToolStripMenuItem1";
+            this.todasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.todasToolStripMenuItem1.Text = "Todas";
+            this.todasToolStripMenuItem1.Click += new System.EventHandler(this.todasToolStripMenuItem1_Click);
+            // 
+            // estrenosToolStripMenuItem
+            // 
+            this.estrenosToolStripMenuItem.Name = "estrenosToolStripMenuItem";
+            this.estrenosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estrenosToolStripMenuItem.Text = "Estrenos";
+            this.estrenosToolStripMenuItem.Click += new System.EventHandler(this.estrenosToolStripMenuItem_Click);
+            // 
+            // restricciónToolStripMenuItem
+            // 
+            this.restricciónToolStripMenuItem.Name = "restricciónToolStripMenuItem";
+            this.restricciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restricciónToolStripMenuItem.Text = "Restricción";
+            this.restricciónToolStripMenuItem.Click += new System.EventHandler(this.restricciónToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +445,10 @@
         private System.Windows.Forms.ToolStripMenuItem miPerfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puntosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disposiciónSalasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem todasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem estrenosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restricciónToolStripMenuItem;
     }
 }
 

@@ -350,5 +350,62 @@ namespace DSEProyectoFinal.Repositorio
                 }
             }
         }
+
+        public DataTable ListarReporteVentas(
+DateTime fechaInicio,
+DateTime fechaFin,
+int idPelicula)
+        {
+            string query =
+            @"SELECT *
+
+      FROM vw_ReporteVentas
+
+      WHERE
+      CAST(FechaVenta AS DATE)
+      BETWEEN
+      CAST(@fechaInicio AS DATE)
+      AND
+      CAST(@fechaFin AS DATE)";
+
+            if (idPelicula > 0)
+            {
+                query +=
+                " AND IdPelicula=" +
+                idPelicula;
+            }
+
+            query +=
+            " ORDER BY FechaVenta";
+
+            using (SqlConnection conexion =
+                new SqlConnection(connectionString))
+            {
+                SqlCommand comando =
+                new SqlCommand(query,
+                conexion);
+
+                comando.Parameters.AddWithValue(
+                "@fechaInicio",
+                fechaInicio);
+
+                comando.Parameters.AddWithValue(
+                "@fechaFin",
+                fechaFin);
+
+                conexion.Open();
+
+                SqlDataReader reader =
+                comando.ExecuteReader();
+
+                DataTable dt =
+                new DataTable();
+
+                dt.Load(reader);
+
+                return dt;
+            }
+        }
+
     }
 }

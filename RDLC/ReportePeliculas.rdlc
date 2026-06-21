@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.59021cm</Width>
+              <Width>6.31285cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -24,13 +24,49 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.73813cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Titulo</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Sienna</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox3">
@@ -40,7 +76,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Titulo</Value>
+                              <Value>Genero</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -76,7 +112,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Genero</Value>
+                              <Value>Clasificacion</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -112,7 +148,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Clasificacion</Value>
+                              <Value>Duracion</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -148,7 +184,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Duracion</Value>
+                              <Value>Fecha Estreno</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -184,7 +220,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Estreno</Value>
+                              <Value>Cantidad Vistas</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -220,42 +256,6 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value># Vistas</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>Sienna</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox15">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
                               <Value>Total Ingresos</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
@@ -268,7 +268,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -410,21 +410,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Estreno">
+                    <Textbox Name="FechaEstreno">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Estreno.Value</Value>
+                              <Value>=Fields!FechaEstreno.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Estreno</rd:DefaultName>
+                      <rd:DefaultName>FechaEstreno</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -524,16 +524,31 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DsPeliculas</DataSetName>
-        <Top>2.23407cm</Top>
-        <Left>0.34396cm</Left>
+        <Top>2.32516cm</Top>
+        <Left>1.26683cm</Left>
         <Height>1.2cm</Height>
-        <Width>19.82833cm</Width>
+        <Width>21.31285cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>CinePelisLogo</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.52cm</Top>
+        <Left>1.26683cm</Left>
+        <Height>1.5cm</Height>
+        <Width>3.03139cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
       <Textbox Name="Textbox17">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -542,7 +557,7 @@
             <TextRuns>
               <TextRun>
                 <Value>CINEPELIS
-REPORTE DE PELÍCULAS</Value>
+REPORTE DE PELÍCULAS POR RANGO DE FECHAS</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Times New Roman</FontFamily>
@@ -559,11 +574,11 @@ REPORTE DE PELÍCULAS</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>0.33224cm</Top>
-        <Left>7.96078cm</Left>
+        <Top>0.81146cm</Top>
+        <Left>6.20321cm</Left>
         <Height>1.20854cm</Height>
-        <Width>6.945cm</Width>
-        <ZIndex>1</ZIndex>
+        <Width>10.46396cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -574,31 +589,44 @@ REPORTE DE PELÍCULAS</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Image1">
-        <Source>Embedded</Source>
-        <Value>CinePelisLogo</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>0.33224cm</Top>
-        <Left>0.97578cm</Left>
-        <Height>1.5cm</Height>
-        <Width>3.66958cm</Width>
-        <ZIndex>2</ZIndex>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Fecha: " &amp; Today()</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.42cm</Top>
+        <Left>19.42cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.15967cm</Width>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Image>
+      </Textbox>
     </ReportItems>
-    <Height>1.46875in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>8.15402in</Width>
+  <Width>8.9938in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <InteractiveHeight>21cm</InteractiveHeight>
-    <InteractiveWidth>29.7cm</InteractiveWidth>
     <LeftMargin>2cm</LeftMargin>
     <RightMargin>2cm</RightMargin>
     <TopMargin>2cm</TopMargin>
@@ -613,7 +641,7 @@ REPORTE DE PELÍCULAS</Value>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>47be1296-94db-46a7-b9a7-470be69ad243</rd:DataSourceID>
+      <rd:DataSourceID>41d81b7c-370b-4b61-85b6-c3f1f4428fb4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -643,9 +671,9 @@ REPORTE DE PELÍCULAS</Value>
           <DataField>Duracion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Estreno">
-          <DataField>Estreno</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="FechaEstreno">
+          <DataField>FechaEstreno</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="CantidadVistas">
           <DataField>CantidadVistas</DataField>
@@ -895,5 +923,5 @@ eRTp9UmnrZt+6PkqXSONlvQ684bK/VNmdhtLt/6a3vda1qvyfUpC/2gA6PUp/BmahffU0yv40iMtTknG
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>a2f499a0-a19b-4bce-885b-3b689192ee79</rd:ReportID>
+  <rd:ReportID>497b147b-866b-4f92-9324-e4ca3110436e</rd:ReportID>
 </Report>

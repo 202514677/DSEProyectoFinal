@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 using DSEProyectoFinal.Clases;
 
 namespace DSEProyectoFinal.Repositorio
@@ -564,6 +565,84 @@ namespace DSEProyectoFinal.Repositorio
                     {
                         return null;
                     }
+                }
+            }
+        }
+
+        public DataTable ListarReporteOcupacionSala(
+ DateTime fechaInicio,
+ DateTime fechaFin,
+ int idCine,
+ int idPelicula)
+        {
+            string query =
+            @"SELECT *
+
+    FROM vw_ReporteOcupacionSala
+
+    WHERE
+    CAST(FechaInicio AS DATE)
+    BETWEEN
+    CAST(@fechaInicio AS DATE)
+    AND
+    CAST(@fechaFin AS DATE)";
+
+            if (idCine > 0)
+            {
+                query +=
+                " AND IdCine=" +
+                idCine;
+            }
+
+            if (idPelicula > 0)
+            {
+                query +=
+                " AND IdPelicula=" +
+                idPelicula;
+            }
+
+            query +=
+            @" ORDER BY
+       Cine,
+       Pelicula,
+       NumSala";
+
+            using (SqlConnection conexion =
+                new SqlConnection(connectionString))
+            {
+                SqlCommand comando =
+                new SqlCommand(query,
+                conexion);
+
+                comando.Parameters.AddWithValue(
+                "@fechaInicio",
+                fechaInicio);
+
+                comando.Parameters.AddWithValue(
+                "@fechaFin",
+                fechaFin);
+
+                try
+                {
+                    conexion.Open();
+
+                    SqlDataReader reader =
+                    comando.ExecuteReader();
+
+                    DataTable dt =
+                    new DataTable();
+
+                    dt.Load(reader);
+
+                    return dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                    ex.Message,
+                    "Reporte Ocupación Sala");
+
+                    return new DataTable();
                 }
             }
         }

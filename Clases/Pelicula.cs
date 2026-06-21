@@ -8,7 +8,7 @@ using DSEProyectoFinal.Repositorio;
 
 namespace DSEProyectoFinal.Clases
 {
-    internal class Pelicula
+    public class Pelicula
     {
         public int idPelicula { get; set; }
 

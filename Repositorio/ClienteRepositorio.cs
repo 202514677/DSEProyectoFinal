@@ -516,5 +516,52 @@ namespace DSEProyectoFinal.Repositorio
             }
         }
 
+        public DataTable ListarReporte(
+DateTime fechaInicio,
+DateTime fechaFin)
+        {
+            string query =
+            @"SELECT *
+
+    FROM vw_ReporteClientes
+
+    WHERE
+    CAST(FechaRegistro AS DATE)
+    BETWEEN
+    CAST(@fechaInicio AS DATE)
+    AND
+    CAST(@fechaFin AS DATE)
+
+    ORDER BY Nombre";
+
+            using (SqlConnection conexion =
+                new SqlConnection(connectionString))
+            {
+                using (SqlCommand comando =
+                    new SqlCommand(query, conexion))
+                {
+                    comando.Parameters.AddWithValue(
+                    "@fechaInicio",
+                    fechaInicio);
+
+                    comando.Parameters.AddWithValue(
+                    "@fechaFin",
+                    fechaFin);
+
+                    conexion.Open();
+
+                    SqlDataReader reader =
+                    comando.ExecuteReader();
+
+                    DataTable dt =
+                    new DataTable();
+
+                    dt.Load(reader);
+
+                    return dt;
+                }
+            }
+        }
+
     }
 }
