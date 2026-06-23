@@ -1,4 +1,5 @@
 ﻿using DSEProyectoFinal.Clases;
+using DSEProyectoFinal.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,13 @@ namespace DSEProyectoFinal.Formularios
         // true = envía email real
         // false = modo pruebas
         private bool enviarCorreoReal = false;
+
+        //Recuperar contraseña
+        private bool RecuperacionModoPrueba = true;
+
+        private bool accesoTemporalActivo = false;
+
+        private const string PASSWORD_TEMPORAL =  "5678";
 
         public string CorreoPredeterminado
         {
@@ -135,9 +143,7 @@ namespace DSEProyectoFinal.Formularios
             }
         }
 
-        private void btnEnviarCodigo_Click(
-   object sender,
-   EventArgs e)
+        private void btnEnviarCodigo_Click( object sender, EventArgs e)
         {
             if (txtCorreo.Text.Trim() == "")
             {
@@ -187,7 +193,9 @@ namespace DSEProyectoFinal.Formularios
             txtToken.Focus();
         }
 
-        private void btnEntrar_Click( object sender, EventArgs e)
+        private void btnEntrar_Click(
+     object sender,
+     EventArgs e)
         {
             if (cboTipoUsuario.SelectedIndex == -1)
             {
@@ -257,20 +265,47 @@ namespace DSEProyectoFinal.Formularios
                 txtPassword.Text.Trim());
             }
 
+            // ==========================================
+            // LOGIN FALLIDO
+            // ==========================================
+
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show(
-                "Correo o contraseña incorrectos");
+                // Recuperación de contraseña en modo prueba
+                if (
+                    cboTipoUsuario.Text == "CLIENTE"
+                    &&
+                    accesoTemporalActivo
+                    &&
+                    txtPassword.Text.Trim() == PASSWORD_TEMPORAL)
+                {
+                    dt =
+                    cliente.BuscarPorCorreo(
+                    txtCorreo.Text.Trim());
 
-                btnEntrar.Enabled = false;
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show(
+                        "Correo o contraseña incorrectos");
 
-                btnEnviarCodigo.Enabled = true;
+                        txtPassword.Focus();
 
-                txtToken.Clear();
+                        txtPassword.SelectAll();
 
-                codigoToken = "";
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Correo o contraseña incorrectos");
 
-                return;
+                    txtPassword.Focus();
+
+                    txtPassword.SelectAll();
+
+                    return;
+                }
             }
 
             // =====================
@@ -336,15 +371,20 @@ namespace DSEProyectoFinal.Formularios
                 "CLIENTE";
             }
 
-            // Limpieza
+            // =====================
+            // LIMPIEZA
+            // =====================
 
-            btnEntrar.Enabled = false;
-
-            btnEnviarCodigo.Enabled = true;
+            btnEnviarCodigo.Enabled =
+            true;
 
             txtToken.Clear();
 
             codigoToken = "";
+
+            // Desactivar contraseña temporal
+            accesoTemporalActivo =
+            false;
 
             this.DialogResult =
             DialogResult.OK;
@@ -352,6 +392,98 @@ namespace DSEProyectoFinal.Formularios
             this.Close();
         }
 
+        private void btnRecuperarPassword_Click(
+      object sender,
+      EventArgs e)
+        {
+            if (cboTipoUsuario.Text != "CLIENTE")
+            {
+                MessageBox.Show(
+                "La recuperación de contraseña sólo está disponible para clientes.");
 
+                return;
+            }
+
+            if (txtCorreo.Text.Trim() == "")
+            {
+                MessageBox.Show(
+                "Ingrese su correo electrónico.");
+
+                txtCorreo.Focus();
+
+                return;
+            }
+
+            Cliente cliente =
+            new Cliente();
+
+            DataTable dt =
+            cliente.BuscarPorCorreo(
+            txtCorreo.Text.Trim());
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show(
+                "No existe ningún cliente registrado con ese correo.");
+
+                return;
+            }
+
+            // Por seguridad, reiniciar el estado
+            accesoTemporalActivo = false;
+
+            if (RecuperacionModoPrueba)
+            {
+                accesoTemporalActivo = true;
+
+                MessageBox.Show(
+
+                "Se ha enviado una nueva contraseña temporal al correo electrónico.\n\n"
+
+                +
+
+                "Para fines académicos y de prueba la contraseña temporal es:\n\n"
+
+                +
+
+                PASSWORD_TEMPORAL
+
+                +
+
+                "\n\nEsta contraseña permitirá un acceso temporal al sistema.\n\n"
+
+                +
+
+                "Recuerde solicitar un nuevo código si vuelve a olvidar su contraseña.",
+
+                "Recuperar contraseña",
+
+                MessageBoxButtons.OK,
+
+                MessageBoxIcon.Information);
+
+                // Opcional: colocar la clave temporal automáticamente
+                txtPassword.Text =  PASSWORD_TEMPORAL;
+
+                txtPassword.Focus();
+
+                txtPassword.SelectAll();
+
+                return;
+            }
+
+            // Entregas futuras
+            // string passwordNueva =
+            // GenerarPasswordAleatoria();
+
+            // EnviarCorreoPasswordTemporal(
+            // txtCorreo.Text,
+            // passwordNueva);
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            accesoTemporalActivo = false;
+        }
     }
 }

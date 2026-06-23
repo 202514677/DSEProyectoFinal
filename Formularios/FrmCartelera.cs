@@ -36,6 +36,10 @@ namespace DSEProyectoFinal.Formularios
             ModoNuevo();
 
             Limpiar();
+
+            dtpHora.Format = DateTimePickerFormat.Custom;
+            dtpHora.CustomFormat = "HH:mm";
+            dtpHora.ShowUpDown = true;
         }
 
         private void CargarPeliculas()
@@ -97,6 +101,8 @@ namespace DSEProyectoFinal.Formularios
 
             dtpFechaFinalizacion.Value =
             DateTime.Today;
+
+            dtpHora.Value = DateTime.Now;
 
             chkActivo.Checked = true;
 
@@ -190,6 +196,15 @@ namespace DSEProyectoFinal.Formularios
             dgvCartelera.CurrentRow.Cells["FechaFinalizacion"]
             .Value);
 
+            if (dgvCartelera.CurrentRow.Cells["HoraProyeccion"].Value != DBNull.Value)
+            {
+                dtpHora.Value =
+                DateTime.Today.Add(
+                (TimeSpan)dgvCartelera.CurrentRow
+                .Cells["HoraProyeccion"].Value);
+            }
+
+
             chkActivo.Checked =
             Convert.ToBoolean(
             dgvCartelera.CurrentRow.Cells["Activo"]
@@ -267,6 +282,9 @@ namespace DSEProyectoFinal.Formularios
             cartelera.fechaFinalizacion =
             dtpFechaFinalizacion.Value.Date;
 
+            cartelera.horaProyeccion =
+            dtpHora.Value.TimeOfDay;
+
             cartelera.activo =
             chkActivo.Checked ? 1 : 0;
 
@@ -340,6 +358,10 @@ namespace DSEProyectoFinal.Formularios
 
             cartelera.fechaFinalizacion =
             dtpFechaFinalizacion.Value.Date;
+
+            cartelera.horaProyeccion =
+            dtpHora.Value.TimeOfDay;
+            
 
             cartelera.activo =
             chkActivo.Checked ? 1 : 0;

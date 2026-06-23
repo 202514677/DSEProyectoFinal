@@ -192,6 +192,15 @@ namespace DSEProyectoFinal.Formularios
             CargarRestriccion(txtBuscar.Text);
         }
 
-        
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            FrmVentaEntradas frm = new FrmVentaEntradas();
+            frm.ShowDialog();
+        }
     }
 }

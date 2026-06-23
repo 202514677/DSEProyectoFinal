@@ -440,7 +440,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(186, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(88, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 84);
             this.pictureBox1.TabIndex = 48;
@@ -451,11 +451,11 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label16.Location = new System.Drawing.Point(462, 60);
+            this.label16.Location = new System.Drawing.Point(392, 61);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(192, 20);
+            this.label16.Size = new System.Drawing.Size(347, 20);
             this.label16.TabIndex = 47;
-            this.label16.Text = "Formulario de Horarios";
+            this.label16.Text = "Formulario de Programación de Funciones";
             // 
             // FrmHorarios
             // 
@@ -502,7 +502,7 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Name = "FrmHorarios";
-            this.Text = "FrmHorarios";
+            this.Text = "Mantenimiento de Programación de Funciones";
             this.Load += new System.EventHandler(this.FrmHorarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

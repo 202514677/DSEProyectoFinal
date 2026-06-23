@@ -191,5 +191,22 @@ namespace DSEProyectoFinal.Formularios
         {
             CargarEstrenos(txtBuscar.Text);
         }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComprar_Click_1(object sender, EventArgs e)
+        {
+            FrmVentaEntradas frm = new FrmVentaEntradas();
+            frm.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FrmVentaEntradas frm = new FrmVentaEntradas();
+            frm.ShowDialog();
+        }
     }
 }

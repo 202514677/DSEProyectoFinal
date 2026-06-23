@@ -55,6 +55,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cboCine = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.picPelicula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCartelera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +71,6 @@
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
-          
             // 
             // label2
             // 
@@ -80,7 +81,6 @@
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Película";
-            
             // 
             // label3
             // 
@@ -91,7 +91,6 @@
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha de Inicio";
-           
             // 
             // label4
             // 
@@ -102,7 +101,6 @@
             this.label4.Size = new System.Drawing.Size(131, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Fecha de Finalización";
-           
             // 
             // label5
             // 
@@ -168,7 +166,7 @@
             // dgvCartelera
             // 
             this.dgvCartelera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCartelera.Location = new System.Drawing.Point(48, 349);
+            this.dgvCartelera.Location = new System.Drawing.Point(48, 399);
             this.dgvCartelera.Name = "dgvCartelera";
             this.dgvCartelera.Size = new System.Drawing.Size(684, 150);
             this.dgvCartelera.TabIndex = 11;
@@ -179,7 +177,7 @@
             this.btnNuevo.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(144, 301);
+            this.btnNuevo.Location = new System.Drawing.Point(144, 351);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 30);
             this.btnNuevo.TabIndex = 12;
@@ -192,7 +190,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.DarkOrange;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(252, 301);
+            this.btnGuardar.Location = new System.Drawing.Point(252, 351);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 30);
             this.btnGuardar.TabIndex = 13;
@@ -205,7 +203,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.DarkViolet;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(360, 301);
+            this.btnEditar.Location = new System.Drawing.Point(360, 351);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 30);
             this.btnEditar.TabIndex = 14;
@@ -217,7 +215,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Yellow;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(480, 301);
+            this.btnEliminar.Location = new System.Drawing.Point(480, 351);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 30);
             this.btnEliminar.TabIndex = 15;
@@ -230,7 +228,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.Crimson;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(588, 301);
+            this.btnSalir.Location = new System.Drawing.Point(588, 351);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 30);
             this.btnSalir.TabIndex = 16;
@@ -273,7 +271,7 @@
             // 
             this.lblTotalCarteleras.AutoSize = true;
             this.lblTotalCarteleras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCarteleras.Location = new System.Drawing.Point(342, 513);
+            this.lblTotalCarteleras.Location = new System.Drawing.Point(343, 558);
             this.lblTotalCarteleras.Name = "lblTotalCarteleras";
             this.lblTotalCarteleras.Size = new System.Drawing.Size(91, 13);
             this.lblTotalCarteleras.TabIndex = 20;
@@ -320,7 +318,6 @@
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 42;
             this.label7.Text = "Cine";
-           
             // 
             // cboCine
             // 
@@ -330,11 +327,31 @@
             this.cboCine.Size = new System.Drawing.Size(121, 21);
             this.cboCine.TabIndex = 43;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 297);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Hora de Proyección";
+            // 
+            // dtpHora
+            // 
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHora.Location = new System.Drawing.Point(178, 290);
+            this.dtpHora.Name = "dtpHora";
+            this.dtpHora.Size = new System.Drawing.Size(120, 20);
+            this.dtpHora.TabIndex = 45;
+            // 
             // FrmCartelera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 537);
+            this.ClientSize = new System.Drawing.Size(756, 578);
+            this.Controls.Add(this.dtpHora);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.cboCine);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label14);
@@ -401,5 +418,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboCine;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpHora;
     }
 }

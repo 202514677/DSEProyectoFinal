@@ -32,11 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.flpPeliculasTodas = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnComprar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(249, 18);
+            this.txtBuscar.Location = new System.Drawing.Point(205, 16);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(325, 20);
             this.txtBuscar.TabIndex = 1;
@@ -48,7 +50,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(65, 18);
+            this.label1.Location = new System.Drawing.Point(21, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 16);
             this.label1.TabIndex = 2;
@@ -56,10 +58,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Crimson;
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(594, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(550, 14);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 30);
             this.btnBuscar.TabIndex = 3;
@@ -71,10 +73,37 @@
             // 
             this.flpPeliculasTodas.AutoScroll = true;
             this.flpPeliculasTodas.BackColor = System.Drawing.Color.Transparent;
-            this.flpPeliculasTodas.Location = new System.Drawing.Point(3, 55);
+            this.flpPeliculasTodas.Location = new System.Drawing.Point(24, 55);
             this.flpPeliculasTodas.Name = "flpPeliculasTodas";
-            this.flpPeliculasTodas.Size = new System.Drawing.Size(794, 383);
+            this.flpPeliculasTodas.Size = new System.Drawing.Size(717, 310);
             this.flpPeliculasTodas.TabIndex = 4;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(648, 13);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 30);
+            this.btnSalir.TabIndex = 28;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnComprar
+            // 
+            this.btnComprar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.ForeColor = System.Drawing.Color.White;
+            this.btnComprar.Location = new System.Drawing.Point(263, 391);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(167, 30);
+            this.btnComprar.TabIndex = 29;
+            this.btnComprar.Text = "Comprar Entradas";
+            this.btnComprar.UseVisualStyleBackColor = false;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // FrmPeliculasTodas
             // 
@@ -82,7 +111,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DSEProyectoFinal.Properties.Resources.cinepelis;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(768, 450);
+            this.Controls.Add(this.btnComprar);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.flpPeliculasTodas);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
@@ -102,5 +133,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.FlowLayoutPanel flpPeliculasTodas;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnComprar;
     }
 }

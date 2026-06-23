@@ -199,6 +199,7 @@
             this.btnRecuperarPassword.TabIndex = 14;
             this.btnRecuperarPassword.Text = "Recuperar Contraseña";
             this.btnRecuperarPassword.UseVisualStyleBackColor = false;
+            this.btnRecuperarPassword.Click += new System.EventHandler(this.btnRecuperarPassword_Click);
             // 
             // FrmLogin
             // 
@@ -223,6 +224,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -275,7 +275,7 @@ namespace DSEProyectoFinal.Formularios
             if (horario.Registrar())
             {
                 MessageBox.Show(
-                "Horario registrado correctamente");
+                "Programación registrada correctamente");
 
                 CargarDatos();
 
@@ -374,7 +374,7 @@ namespace DSEProyectoFinal.Formularios
             if (horario.Actualizar())
             {
                 MessageBox.Show(
-                "Horario actualizado");
+                "Programación actualizada");
 
                 CargarDatos();
 
@@ -399,7 +399,7 @@ namespace DSEProyectoFinal.Formularios
 
             DialogResult respuesta =
             MessageBox.Show(
-            "¿Desea desactivar este horario?",
+            "¿Desea desactivar esta programación?",
             "Confirmar",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
@@ -419,7 +419,7 @@ namespace DSEProyectoFinal.Formularios
             if (horario.Eliminar())
             {
                 MessageBox.Show(
-                "Horario desactivado");
+                "Programación desactivada");
 
                 CargarDatos();
 
