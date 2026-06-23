@@ -1,3 +1,6 @@
+USE [BD_CINEPELIS]
+GO
+
 INSERT INTO Roles
 (
 Nombre,
@@ -1398,3 +1401,57 @@ VALUES
 (6,1,1,18.90,18.90),
 (6,11,1,15.90,15.90),
 (6,17,2,10.90,21.80);
+
+
+
+UPDATE [BD_CINEPELIS].[dbo].[Horarios]
+SET [CantidadVentaPublico] = 80
+,[CantidadCorporativo] = 10
+,[CantidadMarketing] = 10
+
+GO;
+
+
+ALTER VIEW vw_ReporteVentas
+AS
+SELECT
+
+V.IdVenta,
+
+V.FechaVenta,
+
+P.IdPelicula,
+
+CL.Nombre + ' ' + CL.Apellido AS Cliente,
+
+CI.Nombre AS Cine,
+
+P.Titulo AS Pelicula,
+
+V.CantidadEntradas,
+
+V.SubTotal,
+
+V.IGV,
+
+V.Total,
+
+V.MetodoPago
+
+FROM Ventas V
+
+INNER JOIN Clientes CL
+ON V.IdCliente = CL.IdCliente
+
+INNER JOIN Horarios H
+ON V.IdHorario = H.IdHorario
+
+INNER JOIN Cartelera C
+ON H.IdCartelera = C.IdCartelera
+
+INNER JOIN Peliculas P
+ON C.IdPelicula = P.IdPelicula
+
+INNER JOIN Cines CI
+ON C.IdCine = CI.IdCine;
+GO
