@@ -45,13 +45,13 @@
             this.reportViewer1.Location = new System.Drawing.Point(38, 126);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(695, 312);
+            this.reportViewer1.Size = new System.Drawing.Size(891, 312);
             this.reportViewer1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(318, 86);
+            this.label2.Location = new System.Drawing.Point(547, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 49;
@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(315, 48);
+            this.label1.Location = new System.Drawing.Point(544, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 48;
@@ -92,7 +92,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Crimson;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(571, 58);
+            this.btnBuscar.Location = new System.Drawing.Point(800, 57);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 30);
             this.btnBuscar.TabIndex = 45;
@@ -103,7 +103,7 @@
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(409, 80);
+            this.dtpHasta.Location = new System.Drawing.Point(638, 79);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(129, 20);
             this.dtpHasta.TabIndex = 44;
@@ -111,7 +111,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(409, 48);
+            this.dtpDesde.Location = new System.Drawing.Point(638, 47);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(129, 20);
             this.dtpDesde.TabIndex = 43;
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(954, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
@@ -130,6 +130,7 @@
             this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmReporteClientes";
             this.Load += new System.EventHandler(this.FrmReporteClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

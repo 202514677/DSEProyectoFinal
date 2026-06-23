@@ -45,7 +45,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(252, 49);
+            this.label4.Location = new System.Drawing.Point(312, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 81;
@@ -54,7 +54,7 @@
             // cboCategoria
             // 
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(255, 79);
+            this.cboCategoria.Location = new System.Drawing.Point(315, 79);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 80;
@@ -62,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(448, 87);
+            this.label2.Location = new System.Drawing.Point(508, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 79;
@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(445, 49);
+            this.label1.Location = new System.Drawing.Point(505, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 78;
@@ -82,7 +82,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label14.Location = new System.Drawing.Point(356, 12);
+            this.label14.Location = new System.Drawing.Point(394, 12);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(257, 20);
             this.label14.TabIndex = 77;
@@ -103,7 +103,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Crimson;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(701, 59);
+            this.btnBuscar.Location = new System.Drawing.Point(761, 59);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 30);
             this.btnBuscar.TabIndex = 75;
@@ -114,7 +114,7 @@
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(539, 81);
+            this.dtpHasta.Location = new System.Drawing.Point(599, 81);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(129, 20);
             this.dtpHasta.TabIndex = 74;
@@ -122,7 +122,7 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(539, 49);
+            this.dtpDesde.Location = new System.Drawing.Point(599, 49);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(129, 20);
             this.dtpDesde.TabIndex = 73;
@@ -132,14 +132,14 @@
             this.reportViewer1.Location = new System.Drawing.Point(28, 134);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(748, 227);
+            this.reportViewer1.Size = new System.Drawing.Size(861, 247);
             this.reportViewer1.TabIndex = 72;
             // 
             // FrmReporteDulceria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 450);
+            this.ClientSize = new System.Drawing.Size(954, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.label2);
@@ -151,6 +151,7 @@
             this.Controls.Add(this.dtpDesde);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmReporteDulceria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmReporteDulceria";
             this.Load += new System.EventHandler(this.FrmReporteDulceria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

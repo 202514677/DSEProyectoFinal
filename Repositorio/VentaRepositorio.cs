@@ -352,21 +352,21 @@ namespace DSEProyectoFinal.Repositorio
         }
 
         public DataTable ListarReporteVentas(
-DateTime fechaInicio,
-DateTime fechaFin,
-int idPelicula)
+        DateTime fechaInicio,
+        DateTime fechaFin,
+        int idPelicula)
         {
             string query =
             @"SELECT *
 
-      FROM vw_ReporteVentas
+    FROM vw_ReporteVentas
 
-      WHERE
-      CAST(FechaVenta AS DATE)
-      BETWEEN
-      CAST(@fechaInicio AS DATE)
-      AND
-      CAST(@fechaFin AS DATE)";
+    WHERE
+    CAST(FechaVenta AS DATE)
+    BETWEEN
+    CAST(@fechaInicio AS DATE)
+    AND
+    CAST(@fechaFin AS DATE)";
 
             if (idPelicula > 0)
             {
@@ -375,8 +375,11 @@ int idPelicula)
                 idPelicula;
             }
 
+            // AQUÍ VA EL ORDER BY
             query +=
-            " ORDER BY FechaVenta";
+            @" ORDER BY
+    FechaVenta DESC,
+    IdVenta DESC";
 
             using (SqlConnection conexion =
                 new SqlConnection(connectionString))

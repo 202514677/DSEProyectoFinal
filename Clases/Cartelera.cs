@@ -16,6 +16,8 @@ namespace DSEProyectoFinal.Clases
 
         public DateTime fechaFinalizacion { get; set; }
 
+        public TimeSpan horaProyeccion { get; set; }
+
         public int activo { get; set; }
 
         private readonly CarteleraRepositorio repositorio;

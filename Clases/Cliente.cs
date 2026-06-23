@@ -130,5 +130,12 @@ namespace DSEProyectoFinal.Clases
             correo,
             password);
         }
+
+        public DataTable BuscarPorCorreo(string correo)
+        {
+            return repositorio
+            .BuscarPorCorreo(
+            correo);
+        }
     }
 }

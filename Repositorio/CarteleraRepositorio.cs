@@ -36,7 +36,9 @@ namespace DSEProyectoFinal.Repositorio
 
     C.FechaInicio,
 
-    C.FechaFinalizacion
+    C.FechaFinalizacion,
+
+    C.HoraProyeccion
 
     FROM Cartelera C
 
@@ -124,6 +126,7 @@ namespace DSEProyectoFinal.Repositorio
         FechaFinalizacion,
         FechaRegistro,
         FechaActualizacion,
+        HoraProyeccion,
         Activo
     )
     VALUES
@@ -134,6 +137,7 @@ namespace DSEProyectoFinal.Repositorio
         @FechaFinalizacion,
         GETDATE(),
         GETDATE(),
+        @HoraProyeccion,
         @Activo
     )";
 
@@ -151,6 +155,7 @@ namespace DSEProyectoFinal.Repositorio
                 IdPelicula=@IdPelicula,
                 FechaInicio=@FechaInicio,
                 FechaFinalizacion=@FechaFinalizacion,
+                HoraProyeccion=@HoraProyeccion,
                 Activo=@Activo,
                 FechaActualizacion=GETDATE()
             WHERE IdCartelera=@IdCartelera";
@@ -202,7 +207,9 @@ namespace DSEProyectoFinal.Repositorio
 
                     C.FechaRegistro,
 
-                    C.FechaActualizacion
+                    C.FechaActualizacion,
+
+                    C.HoraProyeccion
 
                 FROM Cartelera C
 
@@ -210,10 +217,7 @@ namespace DSEProyectoFinal.Repositorio
                     ON C.IdPelicula=P.IdPelicula
 
                 INNER JOIN Cines CI
-                    ON C.IdCine=CI.IdCine
-
-                WHERE
-                    C.Activo=1";
+                    ON C.IdCine=CI.IdCine";
 
             return EjecutarSelect(query);
         }
@@ -242,6 +246,8 @@ namespace DSEProyectoFinal.Repositorio
                 C.FechaInicio,
 
                 C.FechaFinalizacion,
+
+                C.HoraProyeccion,
 
                 C.Activo
 
@@ -449,6 +455,10 @@ namespace DSEProyectoFinal.Repositorio
                     c.fechaFinalizacion);
 
                     comando.Parameters.AddWithValue(
+                    "@HoraProyeccion",
+                    c.horaProyeccion);
+
+                    comando.Parameters.AddWithValue(
                     "@Activo",
                     c.activo);
 
@@ -488,6 +498,10 @@ namespace DSEProyectoFinal.Repositorio
                     comando.Parameters.AddWithValue(
                     "@FechaFinalizacion",
                     c.fechaFinalizacion);
+
+                    comando.Parameters.AddWithValue(
+                    "@HoraProyeccion",
+                    c.horaProyeccion);
 
                     comando.Parameters.AddWithValue(
                     "@Activo",
@@ -647,7 +661,9 @@ namespace DSEProyectoFinal.Repositorio
 
         C.FechaInicio,
 
-        C.FechaFinalizacion
+        C.FechaFinalizacion,
+
+        C.HoraProyeccion
 
     FROM Cartelera C
 

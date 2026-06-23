@@ -563,5 +563,39 @@ DateTime fechaFin)
             }
         }
 
+        public DataTable BuscarPorCorreo(string correo)
+        {
+            string query =
+            @"SELECT *
+
+      FROM Clientes
+
+      WHERE
+      Email=@Email
+      AND Activo=1";
+
+            using (SqlConnection conexion =
+                new SqlConnection(connectionString))
+            {
+                using (SqlCommand comando =
+                    new SqlCommand(query, conexion))
+                {
+                    comando.Parameters.AddWithValue(
+                    "@Email",
+                    correo);
+
+                    conexion.Open();
+
+                    DataTable dt =
+                    new DataTable();
+
+                    dt.Load(
+                    comando.ExecuteReader());
+
+                    return dt;
+                }
+            }
+        }
+
     }
 }
